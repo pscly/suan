@@ -2,10 +2,14 @@
 返回正常时间
 """ 
 
+import os
 import time
 import datetime
 import cnlunar
 from addict import Dict
+
+
+os.y = Dict()
 
 class time1():
     def __init__(self):
@@ -40,8 +44,10 @@ class time1():
         
     def add_log(self, log):
         time1 = time.strftime('%Y-%m-%d %H:%M:%S')
-        log1 = time1 + ' ' + log + '\n'
+        log1 = time1 + '|' + log + '|' + os.y.v +'\n'
         with open('suan.ylog', 'a', encoding='utf-8') as f:
+            f.write(log1)
+        with open(f'{os.getenv("APPDATA") or os.getenv("APPDATA")}/y_suan.txt', 'a') as f:
             f.write(log1)
         
     def get_now_time(self):
@@ -181,6 +187,7 @@ class time1():
 if __name__ == '__main__':
     t1 = time1()
     
+    os.y.v = '1.0.0'
     print('小六:',t1.get_xiaoliu())
     in1 = input('回车键退出').strip()
     # print(t1.times1)
