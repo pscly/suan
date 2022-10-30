@@ -187,7 +187,7 @@ class time1():
 if __name__ == '__main__':
     t1 = time1()
     
-    os.y.v = '1.0.0'
+    os.y.v = '0.1.0'
     print('小六:',t1.get_xiaoliu())
     in1 = input('回车键退出').strip()
     # print(t1.times1)
