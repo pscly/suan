@@ -139,3 +139,6 @@ up_files/
 mongo_*/
 o/
 *.ylog
+
+*.dist/
+*build/
