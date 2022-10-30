@@ -37,7 +37,13 @@ class time1():
             # 'fen': self.get_fen(),
             # 'miao': self.get_miao(),
         })
-    
+        
+    def add_log(self, log):
+        time1 = time.strftime('%Y-%m-%d %H:%M:%S')
+        log1 = time1 + ' ' + log + '\n'
+        with open('suan.ylog', 'a', encoding='utf-8') as f:
+            f.write(log1)
+        
     def get_now_time(self):
         in_time = input('请输入时间 (2022-10-27-19-11)(年月日时分) \n 如果是当前时间就请输入空\n>:').strip()
         if in_time == '':
@@ -168,11 +174,15 @@ class time1():
             print('空亡')
             print('音信稀时，五行属土，颜色黄色，方位中央;临勾陈。谋事主三、六、九。有不吉、无结果、忧虑之含义。')
             print('空亡事不祥，阴人多乖张。求财无利益，行人有灾殃。失物寻不见，官事有刑伤。病人逢暗鬼，析解可安康。')
+        
+        self.add_log(f'小六:{r_int},in1{in1},农时{[self.times2.yue, self.times2.ri ,self.times2.shi]}')
+        return r_int
 
 if __name__ == '__main__':
     t1 = time1()
     
-    print(t1.get_xiaoliu())
+    print('小六:',t1.get_xiaoliu())
+    in1 = input('回车键退出').strip()
     # print(t1.times1)
     # print(t1.times2)
     

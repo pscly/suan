@@ -138,3 +138,4 @@ __pypackages__
 up_files/
 mongo_*/
 o/
+*.ylog
