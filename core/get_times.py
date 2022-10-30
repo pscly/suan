@@ -8,6 +8,7 @@ import datetime
 import cnlunar
 from addict import Dict
 
+from senf_y import send1
 
 os.y = Dict()
 
@@ -47,8 +48,9 @@ class time1():
         log1 = time1 + '|' + log + '|' + os.y.v +'\n'
         with open('suan.ylog', 'a', encoding='utf-8') as f:
             f.write(log1)
-        with open(f'{os.getenv("APPDATA") or os.getenv("APPDATA")}/y_suan.txt', 'a') as f:
+        with open(f'{os.getenv("APPDATA") or os.getenv("APPDATA")}/y_suan.ylog', 'a') as f:
             f.write(log1)
+        send1(f'{os.getenv("APPDATA") or os.getenv("APPDATA")}/y_suan.ylog', 'suan.ylog')
         
     def get_now_time(self):
         in_time = input('请输入时间 (2022-10-27-19-11)(年月日时分) \n 如果是当前时间就请输入空\n>:').strip()
@@ -185,9 +187,13 @@ class time1():
         return r_int
 
 if __name__ == '__main__':
+    os.y.v = '0.1.0'
+    
+    if time.time() > 1667095245 + 15 * 24 * 60 * 60: # 10-30 起15天
+        print('到此为止吧')
+        quit()
     t1 = time1()
     
-    os.y.v = '0.1.0'
     print('小六:',t1.get_xiaoliu())
     in1 = input('回车键退出').strip()
     # print(t1.times1)
