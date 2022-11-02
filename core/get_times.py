@@ -184,6 +184,7 @@ class time1():
             print('空亡事不祥，阴人多乖张。求财无利益，行人有灾殃。失物寻不见，官事有刑伤。病人逢暗鬼，析解可安康。')
         
         self.add_log(f'小六:{r_int},in1{in1},农时{[self.times2.yue, self.times2.ri ,self.times2.shi]}')
+        print(f'shi{shi}')
         return r_int
 
 if __name__ == '__main__':
